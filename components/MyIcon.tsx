@@ -1,5 +1,5 @@
 import { FC } from "hono/jsx";
-import { css } from "hono/css" 
+import { Style, css } from "hono/css" 
 
 type MyIconProps = { 
   src: string;
@@ -15,7 +15,8 @@ export const MyIcon: FC<MyIconProps> = (props: MyIconProps) => {
   `
   return (
     <div class={styledContainer}>
-      <image class={styledImage} src={props.src} width="128px" height="128px" alt="icon" />
+      <Style />
+      <image class={styledImage} src={props.src} width="128px" height="128px" alt="icon" /> 
     </div>
   );
 }; 
