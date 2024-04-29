@@ -9,7 +9,7 @@ const app = new Hono()
 const container = css`
   margin: 20px 20px 120px 20px;
 `;
-// header
+// foolter
 const styledFooter = css`
   color: #fff;
   text-align: center;
