@@ -1,5 +1,5 @@
-import { FC } from "hono/jsx"; 
-import { css, Style } from 'hono/css';
+import {FC} from "hono/jsx";
+import {css} from "hono/css";
 
 export const Header: FC = () => {
   const styledHeader = css`
@@ -19,19 +19,15 @@ export const Header: FC = () => {
     font-size: 24px;
   `;
 
-  return ( 
+  return (
     <header class={styledHeader}>
-        <Style />
-        <span class={styledTitle}>melank.me</span>
-        <a class={styledHeaderLink} href="https://github.com/melank">
-          GitHub
-        </a>
-        <a class={styledHeaderLink} href="https://wantedly.com/id/melank">
-          Wantedly
-        </a>
-        <a class={styledHeaderLink} href="https://techtrain.dev/mentors/221">
-          TechTrain
-        </a>
+      <span class={styledTitle}>melank.me</span>
+      <a class={styledHeaderLink} href="https://github.com/melank">
+        GitHub
+      </a>
+      <a class={styledHeaderLink} href="https://wantedly.com/id/melank">
+        Wantedly
+      </a>
     </header>
   );
 };

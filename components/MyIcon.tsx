@@ -1,22 +1,21 @@
-import { FC } from "hono/jsx";
-import { Style, css } from "hono/css" 
+import {FC} from "hono/jsx";
+import {css} from "hono/css";
 
-type MyIconProps = { 
+type MyIconProps = {
   src: string;
 };
 
-export const MyIcon: FC<MyIconProps> = (props: MyIconProps) => {
+export const MyIcon: FC<MyIconProps> = (props) => {
   const styledContainer = css`
     margin-bottom: 10px;
   `;
   const styledImage = css`
     padding: 0;
     border-radius: 20px;
-  `
+  `;
   return (
     <div class={styledContainer}>
-      <Style />
-      <image class={styledImage} src={props.src} width="128px" height="128px" alt="icon" /> 
+      <img class={styledImage} src={props.src} width="128px" height="128px" alt="icon" />
     </div>
   );
-}; 
+};

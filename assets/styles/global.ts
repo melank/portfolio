@@ -7,4 +7,4 @@ export const global = css`
       margin: 0;
     }
   }
-`
+`;
