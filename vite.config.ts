@@ -11,6 +11,8 @@ export default defineConfig({
       entry: 'src/index.tsx',
       exclude: [
         /^\/icon\.jpeg$/,
+        /^\/nestjs-logo\.png$/,
+        /^\/bref-logo\.png$/,
         /^\/assets\/.*/,
         /^\/@.*/,
         /^\/node_modules\/.*/

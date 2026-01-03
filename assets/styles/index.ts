@@ -230,6 +230,9 @@ export const langTitle = css`
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 `;
 
 export const frameworkList = css`
@@ -249,6 +252,9 @@ export const skillTag = css`
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   &:hover {
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(99, 179, 237, 0.5);

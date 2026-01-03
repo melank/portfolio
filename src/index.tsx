@@ -4,6 +4,21 @@ import {Style} from "hono/css";
 import {Header} from "../components/Header";
 import {Footer} from "../components/Footer";
 import {MyIcon} from "../components/MyIcon";
+import {
+  PHPIcon,
+  TypeScriptIcon,
+  PythonIcon,
+  LaravelIcon,
+  SymfonyIcon,
+  BrefIcon,
+  NestJSIcon,
+  NextJSIcon,
+  HonoIcon,
+  AWSIcon,
+  DockerIcon,
+  MySQLIcon,
+  OpenGLIcon,
+} from "../components/SkillIcons";
 import {global} from "../assets/styles/global";
 import {
   container,
@@ -86,26 +101,26 @@ app.get("/", (c) =>
             <p class={skillCategoryTitle}>Languages & Frameworks</p>
             <div class={langGrid}>
               <div class={langGroup}>
-                <p class={langTitle}>PHP</p>
+                <p class={langTitle}><PHPIcon /> PHP</p>
                 <div class={frameworkList}>
-                  <span class={skillTag}>Laravel</span>
-                  <span class={skillTag}>Symfony</span>
-                  <span class={skillTag}>Bref</span>
+                  <span class={skillTag}><LaravelIcon /> Laravel</span>
+                  <span class={skillTag}><SymfonyIcon /> Symfony</span>
+                  <span class={skillTag}><BrefIcon /> Bref</span>
                 </div>
               </div>
               <div class={langGroup}>
-                <p class={langTitle}>TypeScript</p>
+                <p class={langTitle}><TypeScriptIcon /> TypeScript</p>
                 <div class={frameworkList}>
-                  <span class={skillTag}>NestJS</span>
-                  <span class={skillTag}>Next.js</span>
-                  <span class={skillTag}>Hono / HonoX</span>
+                  <span class={skillTag}><NestJSIcon /> NestJS</span>
+                  <span class={skillTag}><NextJSIcon /> Next.js</span>
+                  <span class={skillTag}><HonoIcon /> Hono / HonoX</span>
                 </div>
               </div>
               <div class={langGroup}>
-                <p class={langTitle}>Python</p>
+                <p class={langTitle}><PythonIcon /> Python</p>
                 <div class={frameworkList}>
-                  <span class={skillTag}>Lambda</span>
-                  <span class={skillTag}>AWS SAM</span>
+                  <span class={skillTag}><AWSIcon /> AWS Lambda</span>
+                  <span class={skillTag}><AWSIcon /> AWS SAM</span>
                 </div>
               </div>
             </div>
@@ -115,17 +130,16 @@ app.get("/", (c) =>
             <div class={skillsSection}>
               <p class={skillCategoryTitle}>Infrastructure</p>
               <div class={skillsRow}>
-                <span class={skillTag}>AWS</span>
-                <span class={skillTag}>Docker</span>
-                <span class={skillTag}>MySQL</span>
+                <span class={skillTag}><AWSIcon /> AWS</span>
+                <span class={skillTag}><DockerIcon /> Docker</span>
+                <span class={skillTag}><MySQLIcon /> MySQL</span>
               </div>
             </div>
 
             <div class={skillsSection}>
               <p class={skillCategoryTitle}>Other</p>
               <div class={skillsRow}>
-                <span class={skillTag}>OpenGL</span>
-                <span class={skillTag}>Serverless</span>
+                <span class={skillTag}><OpenGLIcon /> OpenGL</span>
               </div>
             </div>
           </div>
