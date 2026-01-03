@@ -7,15 +7,19 @@ type MyIconProps = {
 
 export const MyIcon: FC<MyIconProps> = (props) => {
   const styledContainer = css`
-    margin-bottom: 10px;
+    position: relative;
   `;
   const styledImage = css`
-    padding: 0;
-    border-radius: 20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 198, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 198, 255, 0.3);
+    object-fit: cover;
   `;
   return (
     <div class={styledContainer}>
-      <img class={styledImage} src={props.src} width="128px" height="128px" alt="icon" />
+      <img class={styledImage} src={props.src} alt="icon" />
     </div>
   );
 };
