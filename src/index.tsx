@@ -33,6 +33,10 @@ app.get("/", (c) =>
   )
 );
 
-app.use("/*", serveStatic());
+// serveStatic は Cloudflare Pages 環境でのみ動作させる
+// ローカルでは Vite が静的ファイルを提供するため
+if (import.meta.env.PROD) {
+  app.use("/*", serveStatic());
+}
 
 export default app;
