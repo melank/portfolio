@@ -11,6 +11,9 @@ export const mainGrid = css`
   grid-template-columns: 1fr 600px;
   gap: 24px;
   align-items: start;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const profileCard = css`
@@ -18,6 +21,10 @@ export const profileCard = css`
   border-radius: 16px;
   padding: 40px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  @media (max-width: 768px) {
+    padding: 24px;
+    border-radius: 12px;
+  }
 `;
 
 export const profileHeader = css`
@@ -38,6 +45,10 @@ export const nameContainer = css`
   align-items: center;
   gap: 12px;
   margin-bottom: 8px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const nameLeft = css`
@@ -52,12 +63,19 @@ export const linksRight = css`
   flex-direction: column;
   gap: 6px;
   align-items: flex-end;
+  @media (max-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 export const name = css`
   font-size: 28px;
   font-weight: 700;
   color: #fff;
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 export const roleContainer = css`
@@ -183,6 +201,9 @@ export const langGrid = css`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const skillsRow = css`
@@ -235,6 +256,9 @@ export const terminalCard = css`
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const terminalHeader = css`
