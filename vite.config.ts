@@ -8,7 +8,13 @@ export default defineConfig({
     build(),
     devServer({
       adapter,
-      entry: 'src/index.tsx'
+      entry: 'src/index.tsx',
+      exclude: [
+        /^\/icon\.jpeg$/,
+        /^\/assets\/.*/,
+        /^\/@.*/,
+        /^\/node_modules\/.*/
+      ]
     })
   ]
 })
