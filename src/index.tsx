@@ -109,11 +109,10 @@ app.get("/", (c) =>
                 </div>
               </div>
               <div class={langGroup}>
-                <p class={langTitle}><TypeScriptIcon /> TypeScript</p>
+                <p class={langTitle}><TypeScriptIcon /> TypeScript (Backend)</p>
                 <div class={frameworkList}>
                   <span class={skillTag}><NestJSIcon /> NestJS</span>
-                  <span class={skillTag}><NextJSIcon /> Next.js</span>
-                  <span class={skillTag}><HonoIcon /> Hono / HonoX</span>
+                  <span class={skillTag}><HonoIcon /> Hono</span>
                 </div>
               </div>
               <div class={langGroup}>
@@ -121,6 +120,12 @@ app.get("/", (c) =>
                 <div class={frameworkList}>
                   <span class={skillTag}><AWSIcon /> AWS Lambda</span>
                   <span class={skillTag}><AWSIcon /> AWS SAM</span>
+                </div>
+              </div>
+              <div class={langGroup}>
+                <p class={langTitle}><TypeScriptIcon /> TypeScript (Frontend)</p>
+                <div class={frameworkList}>
+                  <span class={skillTag}><NextJSIcon /> Next.js</span>
                 </div>
               </div>
             </div>
