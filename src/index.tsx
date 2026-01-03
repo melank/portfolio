@@ -1,232 +1,43 @@
 import {Hono} from "hono";
 import {serveStatic} from "hono/cloudflare-pages";
+import {Style} from "hono/css";
 import {Header} from "../components/Header";
 import {Footer} from "../components/Footer";
 import {MyIcon} from "../components/MyIcon";
-import {css, cx, Style} from "hono/css";
 import {global} from "../assets/styles/global";
+import {
+  container,
+  mainGrid,
+  profileCard,
+  profileHeader,
+  profileInfo,
+  nameContainer,
+  nameLeft,
+  linksRight,
+  name,
+  roleContainer,
+  roleBadge,
+  openToWorkBadge,
+  linkButton,
+  sectionTitle,
+  skillsSection,
+  skillCategoryTitle,
+  langGrid,
+  skillsRow,
+  langGroup,
+  langTitle,
+  frameworkList,
+  skillTag,
+  terminalCard,
+  terminalHeader,
+  terminalDot,
+  terminalBody,
+  terminalLine,
+  terminalPrompt,
+  terminalValue,
+} from "../assets/styles/index";
 
 const app = new Hono();
-
-const container = css`
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px 120px;
-`;
-
-const profileCard = css`
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  border-radius: 16px;
-  padding: 40px;
-  margin-bottom: 32px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-`;
-
-const profileHeader = css`
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-`;
-
-const profileInfo = css`
-  flex: 1;
-  min-width: 200px;
-`;
-
-const name = css`
-  font-size: 28px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 8px;
-`;
-
-const roleContainer = css`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
-`;
-
-const roleBadge = css`
-  background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
-  color: #fff;
-  padding: 8px 18px;
-  border-radius: 20px;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-`;
-
-const specialtyBadge = css`
-  background: rgba(0, 198, 255, 0.1);
-  color: #7dd3fc;
-  padding: 3px 8px;
-  border-radius: 4px;
-  font-size: 11px;
-  font-weight: 500;
-`;
-
-const company = css`
-  color: #a0aec0;
-  font-size: 16px;
-`;
-
-const companyLink = css`
-  color: #63b3ed;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-const openToWorkBadge = css`
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: linear-gradient(90deg, #059669 0%, #10b981 100%);
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  &::before {
-    content: "";
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background: #fff;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-  }
-`;
-
-const sectionTitle = css`
-  font-size: 20px;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  &::before {
-    content: "";
-    display: inline-block;
-    width: 4px;
-    height: 20px;
-    background: linear-gradient(180deg, #00c6ff 0%, #0072ff 100%);
-    border-radius: 2px;
-  }
-`;
-
-const skillsSection = css`
-  margin-bottom: 20px;
-`;
-
-const skillCategoryTitle = css`
-  font-size: 14px;
-  color: #e2e8f0;
-  margin-bottom: 14px;
-  font-weight: 600;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-`;
-
-const langGrid = css`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-`;
-
-const skillsRow = css`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-`;
-
-const langGroup = css`
-  margin-bottom: 0;
-`;
-
-const langTitle = css`
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 8px;
-`;
-
-const frameworkList = css`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding-left: 12px;
-  border-left: 2px solid rgba(0, 198, 255, 0.3);
-`;
-
-const skillTag = css`
-  background: rgba(255, 255, 255, 0.1);
-  color: #e2e8f0;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-size: 14px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.2s;
-  &:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(99, 179, 237, 0.5);
-  }
-`;
-
-const backendHighlight = css`
-  background: linear-gradient(135deg, rgba(0, 198, 255, 0.2) 0%, rgba(0, 114, 255, 0.2) 100%);
-  border-color: rgba(0, 198, 255, 0.3);
-`;
-
-const terminalCard = css`
-  background: #0d1117;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-`;
-
-const terminalHeader = css`
-  background: #161b22;
-  padding: 12px 16px;
-  display: flex;
-  gap: 8px;
-`;
-
-const terminalDot = css`
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-`;
-
-const terminalBody = css`
-  padding: 20px;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-  font-size: 14px;
-  line-height: 1.8;
-`;
-
-const terminalLine = css`
-  color: #8b949e;
-  margin-bottom: 4px;
-`;
-
-const terminalPrompt = css`
-  color: #58a6ff;
-`;
-
-const terminalValue = css`
-  color: #7ee787;
-`;
 
 app.get("/", (c) =>
   c.html(
@@ -234,18 +45,35 @@ app.get("/", (c) =>
       <Style />
       <Header />
       <div class={container}>
+        <div class={mainGrid}>
         <div class={profileCard}>
           <div class={profileHeader}>
             <MyIcon src={"/icon.jpeg"} />
             <div class={profileInfo}>
-              <h1 class={name}>岸田 賢紀</h1>
+              <div class={nameContainer}>
+                <div class={nameLeft}>
+                  <h1 class={name}>岸田 賢紀</h1>
+                  <span class={openToWorkBadge}>Open to Work</span>
+                </div>
+                <div class={linksRight}>
+                  <a class={linkButton} href="https://github.com/melank" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    GitHub
+                  </a>
+                  <a class={linkButton} href="https://wantedly.com/id/melank" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.453 14.555c-.171-.111-.658-.764-2.006-3.982a9.192 9.192 0 0 0-.237-.526l-.274-.664l-2.362-5.702H8.85l2.362 5.702l2.362 5.706l2.181 5.267a.196.196 0 0 0 .362 0l2.373-5.682a.1.1 0 0 0-.037-.119zm-8.85 0c-.171-.111-.658-.764-2.006-3.982a8.971 8.971 0 0 0-.236-.525l-.276-.665l-2.36-5.702H0l2.362 5.702l2.362 5.706l2.181 5.267a.196.196 0 0 0 .362 0l2.374-5.682a.098.098 0 0 0-.038-.119ZM24 6.375a2.851 2.851 0 0 1-2.851 2.852a2.851 2.851 0 0 1-2.852-2.852a2.851 2.851 0 0 1 2.852-2.851A2.851 2.851 0 0 1 24 6.375Z"/>
+                    </svg>
+                    Wantedly
+                  </a>
+                </div>
+              </div>
               <div class={roleContainer}>
                 <span class={roleBadge}>Software Engineer</span>
-                <span class={specialtyBadge}>System Design</span>
-                <span class={specialtyBadge}>API/DB Design</span>
-                <span class={specialtyBadge}>Infrastructure</span>
+                <span class={roleBadge}>Project Manager</span>
               </div>
-              <span class={openToWorkBadge}>Open to Work</span>
             </div>
           </div>
 
@@ -319,6 +147,7 @@ app.get("/", (c) =>
               <span class={terminalValue}>Requirements Definition, API Design, DB Design, Infrastructure</span>
             </p>
           </div>
+        </div>
         </div>
       </div>
       <Footer />
