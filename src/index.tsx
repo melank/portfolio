@@ -124,10 +124,48 @@ const sectionTitle = css`
   }
 `;
 
-const skillsGrid = css`
+const skillsSection = css`
+  margin-bottom: 20px;
+`;
+
+const skillCategoryTitle = css`
+  font-size: 14px;
+  color: #e2e8f0;
+  margin-bottom: 14px;
+  font-weight: 600;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+`;
+
+const langGrid = css`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+`;
+
+const skillsRow = css`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+`;
+
+const langGroup = css`
+  margin-bottom: 0;
+`;
+
+const langTitle = css`
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+`;
+
+const frameworkList = css`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-left: 12px;
+  border-left: 2px solid rgba(0, 198, 255, 0.3);
 `;
 
 const skillTag = css`
@@ -212,15 +250,52 @@ app.get("/", (c) =>
           </div>
 
           <h2 class={sectionTitle}>Skills</h2>
-          <div class={skillsGrid}>
-            <span class={cx(skillTag, backendHighlight)}>PHP</span>
-            <span class={cx(skillTag, backendHighlight)}>Laravel</span>
-            <span class={cx(skillTag, backendHighlight)}>Go</span>
-            <span class={cx(skillTag, backendHighlight)}>Python</span>
-            <span class={skillTag}>TypeScript</span>
-            <span class={skillTag}>AWS</span>
-            <span class={skillTag}>Docker</span>
-            <span class={skillTag}>MySQL</span>
+
+          <div class={skillsSection}>
+            <p class={skillCategoryTitle}>Languages & Frameworks</p>
+            <div class={langGrid}>
+              <div class={langGroup}>
+                <p class={langTitle}>PHP</p>
+                <div class={frameworkList}>
+                  <span class={skillTag}>Laravel</span>
+                  <span class={skillTag}>Symfony</span>
+                  <span class={skillTag}>Bref</span>
+                </div>
+              </div>
+              <div class={langGroup}>
+                <p class={langTitle}>TypeScript</p>
+                <div class={frameworkList}>
+                  <span class={skillTag}>NestJS</span>
+                  <span class={skillTag}>Next.js</span>
+                  <span class={skillTag}>Hono / HonoX</span>
+                </div>
+              </div>
+              <div class={langGroup}>
+                <p class={langTitle}>Python</p>
+                <div class={frameworkList}>
+                  <span class={skillTag}>Lambda</span>
+                  <span class={skillTag}>AWS SAM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class={langGrid}>
+            <div class={skillsSection}>
+              <p class={skillCategoryTitle}>Infrastructure</p>
+              <div class={skillsRow}>
+                <span class={skillTag}>AWS</span>
+                <span class={skillTag}>Docker</span>
+                <span class={skillTag}>MySQL</span>
+              </div>
+            </div>
+
+            <div class={skillsSection}>
+              <p class={skillCategoryTitle}>Other</p>
+              <div class={skillsRow}>
+                <span class={skillTag}>OpenGL</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -235,7 +310,7 @@ app.get("/", (c) =>
               <span class={terminalPrompt}>$ </span>whoami
             </p>
             <p class={terminalLine}>
-              <span class={terminalValue}>Software Engineer specializing in Backend</span>
+              <span class={terminalValue}>Software Engineer specializing in Backend, passionate about Serverless</span>
             </p>
             <p class={terminalLine}>
               <span class={terminalPrompt}>$ </span>cat skills.txt
