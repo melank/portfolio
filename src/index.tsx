@@ -15,6 +15,7 @@ import {
   nameLeft,
   linksRight,
   name,
+  nameEn,
   roleContainer,
   roleBadge,
   openToWorkBadge,
@@ -52,7 +53,9 @@ app.get("/", (c) =>
             <div class={profileInfo}>
               <div class={nameContainer}>
                 <div class={nameLeft}>
-                  <h1 class={name}>岸田 賢紀</h1>
+                  <h1 class={name}>
+                    <ruby>岸田<rp>(</rp><rt class={nameEn}>KISHIDA</rt><rp>)</rp></ruby> <ruby>賢紀<rp>(</rp><rt class={nameEn}>Masaki</rt><rp>)</rp></ruby>
+                  </h1>
                   <span class={openToWorkBadge}>Open to Work</span>
                 </div>
                 <div class={linksRight}>
@@ -122,6 +125,7 @@ app.get("/", (c) =>
               <p class={skillCategoryTitle}>Other</p>
               <div class={skillsRow}>
                 <span class={skillTag}>OpenGL</span>
+                <span class={skillTag}>Serverless</span>
               </div>
             </div>
           </div>
