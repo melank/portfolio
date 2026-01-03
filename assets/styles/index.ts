@@ -78,6 +78,15 @@ export const name = css`
   }
 `;
 
+export const nameEn = css`
+  font-size: 12px;
+  font-weight: 400;
+  color: #a0aec0;
+  ruby-align: start;
+  text-align: left;
+  padding-left: 2px;
+`;
+
 export const roleContainer = css`
   display: flex;
   align-items: center;
