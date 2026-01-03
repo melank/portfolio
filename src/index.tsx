@@ -13,6 +13,7 @@ import {
   BrefIcon,
   NestJSIcon,
   NextJSIcon,
+  ReactIcon,
   HonoIcon,
   AWSIcon,
   DockerIcon,
@@ -123,8 +124,9 @@ app.get("/", (c) =>
                 </div>
               </div>
               <div class={langGroup}>
-                <p class={langTitle}><TypeScriptIcon /> TypeScript (Frontend)</p>
+                <p class={langTitle}><TypeScriptIcon /> TypeScript (Frontend / BFF)</p>
                 <div class={frameworkList}>
+                  <span class={skillTag}><ReactIcon /> React</span>
                   <span class={skillTag}><NextJSIcon /> Next.js</span>
                 </div>
               </div>
