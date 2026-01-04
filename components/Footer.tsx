@@ -3,14 +3,18 @@ import {css} from "hono/css";
 
 export const Footer: FC = () => {
   const styledFooter = css`
-    text-align: center;
-    padding: 10px 0;
-    color: rgb(250, 220, 0);
-    background: #343b3f;
-    width: 100%;
     position: fixed;
-    bottom: 0;
+    bottom: 10px;
+    right: 15px;
+    color: #888;
+    font-size: 12px;
+
+    @media (max-width: 768px) {
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   `;
 
-  return <footer class={styledFooter}></footer>;
+  return <footer class={styledFooter}>&copy; 2025 Masaki Kishida</footer>;
 };
