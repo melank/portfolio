@@ -104,28 +104,6 @@ export const roleBadge = css`
   letter-spacing: 0.5px;
 `;
 
-export const specialtyBadge = css`
-  background: rgba(0, 198, 255, 0.1);
-  color: #7dd3fc;
-  padding: 3px 8px;
-  border-radius: 4px;
-  font-size: 11px;
-  font-weight: 500;
-`;
-
-export const company = css`
-  color: #a0aec0;
-  font-size: 16px;
-`;
-
-export const companyLink = css`
-  color: #63b3ed;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
 export const openToWorkBadge = css`
   display: inline-flex;
   align-items: center;
@@ -149,13 +127,6 @@ export const openToWorkBadge = css`
     0%, 100% { opacity: 1; }
     50% { opacity: 0.5; }
   }
-`;
-
-export const linksContainer = css`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 12px;
 `;
 
 export const linkButton = css`
@@ -259,11 +230,6 @@ export const skillTag = css`
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(99, 179, 237, 0.5);
   }
-`;
-
-export const backendHighlight = css`
-  background: linear-gradient(135deg, rgba(0, 198, 255, 0.2) 0%, rgba(0, 114, 255, 0.2) 100%);
-  border-color: rgba(0, 198, 255, 0.3);
 `;
 
 export const terminalCard = css`
